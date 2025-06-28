@@ -1,129 +1,64 @@
-<!-- landing-page.html -->
+<!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Landing Page</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefefe;
-      color: #333;
-    }
-
-    header {
-      background-color: #4b6cb7;  /* blue gradient */
-      background-image: linear-gradient(to right, #182848, #4b6cb7);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 20px;
-      font-weight: 300;
-    }
-
-    .container {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .container h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: #182848;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .feature {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      width: 280px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature h3 {
-      font-size: 24px;
-      color: #4b6cb7;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    footer {
-      background-color: #182848;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>Welcome to Our Website</h1>
-    <p>Professional Services for Your Digital Needs</p>
+    <h1>Marki Mundu</h1>
+    <p>Web Developer | CSE Student | Tech Enthusiast</p>
   </header>
 
-  <div class="container">
-    <h2>What We Offer</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Fast Delivery</h3>
-        <p>Get your projects done with speed and precision, always on time.</p>
+  <section class="about">
+    <img src="\WhatsApp Image 2025-06-28 at 06.59.30_12595a63.jpg" alt="Profile Picture">
+    <div>
+      <h2>About Me</h2>
+      <p>I’m a passionate web developer with a keen interest in front-end technologies and UI design. I love building clean, functional, and responsive web apps.</p>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>Designed a personal portfolio using HTML & CSS to showcase my work.</p>
       </div>
-      <div class="feature">
-        <h3>Creative Design</h3>
-        <p>Stunning, modern, and responsive designs tailored to your vision.</p>
-      </div>
-      <div class="feature">
-        <h3>24/7 Support</h3>
-        <p>We’re here for you day and night, whenever you need help.</p>
+      <div class="project">
+        <h3>Landing Page</h3>
+        <p>Created a modern landing page with a responsive layout and sleek visuals.</p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="resume">
+    <h2>Resume</h2>
+    <a href="#" target="_blank" class="btn">Download Resume (PDF)</a>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:markimundu0143@gmail.com">markimundu0143@gmail.com</a></p>
+    <p>Phone: +917488944404</p>
+  </section>
 
   <footer>
-    &copy; 2025 YourCompany. All Rights Reserved | Contact: info@yourcompany.com
+    <p>&copy; 2025 Marki Mundu. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
