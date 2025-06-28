@@ -1,64 +1,124 @@
-<!-- portfolio.html -->
+<!-- calculator.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #847a80;
+      padding: 20px 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    #display {
+      width: 100%;
+      height: 60px;
+      font-size: 28px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      grid-gap: 15px;
+      justify-content: center;
+    }
+
+    .buttons button {
+      height: 60px;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .buttons button:hover {
+      background-color: #ddd;
+    }
+
+    .buttons .operator {
+      background-color: #ffe082;
+    }
+
+    .buttons .equals {
+      background-color: #81c784;
+      grid-column: span 2;
+    }
+
+    .buttons .clear {
+      background-color: #e57373;
+      grid-column: span 2;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Marki Mundu</h1>
-    <p>Web Developer | CSE Student | Tech Enthusiast</p>
-  </header>
 
-  <section class="about">
-    <img src="\WhatsApp Image 2025-06-28 at 06.59.30_12595a63.jpg" alt="Profile Picture">
-    <div>
-      <h2>About Me</h2>
-      <p>I’m a passionate web developer with a keen interest in front-end technologies and UI design. I love building clean, functional, and responsive web apps.</p>
+  <div class="calculator">
+    <input type="text" id="display" disabled placeholder="0">
+
+    <div class="buttons">
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('/')" class="operator">÷</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('*')" class="operator">×</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('-')" class="operator">−</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="calculate()" class="equals">=</button>
+      <button onclick="append('+')" class="operator">+</button>
+
+      <button onclick="clearDisplay()" class="clear">C</button>
     </div>
-  </section>
+  </div>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+  <script>
+    function append(value) {
+      const display = document.getElementById("display");
+      display.value += value;
+    }
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>Designed a personal portfolio using HTML & CSS to showcase my work.</p>
-      </div>
-      <div class="project">
-        <h3>Landing Page</h3>
-        <p>Created a modern landing page with a responsive layout and sleek visuals.</p>
-      </div>
-    </div>
-  </section>
+    function clearDisplay() {
+      document.getElementById("display").value = "";
+    }
 
-  <section class="resume">
-    <h2>Resume</h2>
-    <a href="#" target="_blank" class="btn">Download Resume (PDF)</a>
-  </section>
+    function calculate() {
+      const display = document.getElementById("display");
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        alert("Invalid Expression");
+        clearDisplay();
+      }
+    }
+  </script>
 
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:markimundu0143@gmail.com">markimundu0143@gmail.com</a></p>
-    <p>Phone: +917488944404</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Marki Mundu. All rights reserved.</p>
-  </footer>
 </body>
 </html>
